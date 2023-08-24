@@ -9,6 +9,9 @@ public class App {
         hashBool.Put("Cole", true);
         hashBool.Put("Michal", false);
         hashBool.Put("Old", false);
+        hashBool.Put("AR", false);
+
+        hashBool.Delete("AR");
 
         HashTable<String, Person> hashPerson = new HashTable<String, Person>(30);
         Person person1 = new Person("Oskar", 17);
@@ -21,7 +24,8 @@ public class App {
 
         System.out.println(hashInt.Get("Kamil"));
 
-        System.out.println(hashBool.Get("Old"));
+        System.out.println(hashBool.Get("Cole"));
+        System.out.println(hashBool.Get("AR"));
 
         System.out.println(hashPerson.Get("Python").Age);
 

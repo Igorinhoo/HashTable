@@ -39,9 +39,30 @@ public class HashTable<K, V> {
             }
             node = node.next;
         }
-        if (node.key == key) {
+        if (node.key.equals(key)) {
             return node.value;
         }
         return null;
+    }
+
+    public void Delete(K key) {
+        int index = HashFunction(key);
+        Node<K, V> node = values[index];
+        if (node == null) {
+            System.out.println("There is no value to delete");
+            return;
+        }
+        if (key.equals(node.key)) {
+            values[index] = node.next;
+            return;
+        }
+        while (node.next != null) {
+            if (key.equals(node.next.key)) {
+                node.next = node.next.next;
+                return;
+            }
+            node = node.next;
+        }
+        System.out.println("There is no value to delete");
     }
 }
